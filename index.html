@@ -1,36 +1,52 @@
 <!DOCTYPE html>
 <html ng-app="fideligardApp">
   <head>
+
     <!-- jQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
     <!-- Angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
     <!-- UI Router -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
+
     <!-- Bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- UI Bootstrap -->
-    <script type="text/javascript" src="ui-bootstrap.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/lodash/4.16.2/lodash.min.js"></script>
+    <!-- UI Bootstrap -->
+    <script type="text/javascript" src="js/services/ui-bootstrap.min.js"></script>
+
+    <!-- Lodash -->
+    <!-- <script src="https://cdn.jsdelivr.net/lodash/4.16.2/lodash.min.js"></script> -->
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.3/lodash.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
     <nav class="nav navbar-inverse">
       <div class="navbar-header">
-
-        <a class="navbar-brand">Stock Portfolio</a>
+        <a class="navbar-brand bold">Fideligard Stock Portfolio Simulator</a>
       </div>
     </nav>
     <div class="main container">
       <div class="row">
-        <div ui-view="stocks-panel" class="col-md-4"></div>
-        <div ui-view="datepicker" class="col-md-8"></div>
+        <div ui-view="stocks-panel" class="col-md-6">Loading...</div>
+        <div ui-view="datepicker" class="col-md-6 "></div>
+        <div ui-view="" class="col-md-6"><h1></h1></div>
       </div>
     </div>
   </body>
 
-  <script src="app.js"></script>
-  <script src='controllers/datepicker_controller.js'></script>
-  <script src='controllers/stocks_panel_controller.js'></script>
-  <script src='services/stocks_service.js'></script>
+  <script src="js/app.js"></script>
+  <script src='js/services/stocks_service.js'></script>
+  <script src='js/services/dates_service.js'></script>
+  <script src='js/services/sort_service.js'></script>
+  <script src='js/services/trade_service.js'></script>
+  <script src='js/controllers/datepicker_controller.js'></script>
+  <script src='js/controllers/trade_controller.js'></script>
+  <script src='js/controllers/stocks_panel_controller.js'></script>
+  <script src='js/controllers/transactions_controller.js'></script>
+  <script src='js/controllers/portfolio_controller.js'></script>
+  <script src='js/directives/stock.js'></script>
 </html>
